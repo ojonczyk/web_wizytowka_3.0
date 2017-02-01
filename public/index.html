@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Wizytowka - Oskar Jonczyk</title>
+    <link rel="stylesheet" href="assets/stylesheets/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("footer").hide();
+            $("#scrollToTop").hide();
+        });
+        $(window).on('beforeunload', function () {
+            $(window).scrollTop(0);
+        });
+        function showPar(id) {
+            $(".par1").hide();
+            $(id).show();
+            $("footer").show();
+            $("#scrollToTop").show();
+            $("html, body").animate({
+                scrollTop: $(id).position().top - 20
+            }, 1000);
+        }
+        $(document).ready(function () {
+            $("#menu1").click(function () { showPar("#aboutme"); });
+            $("#menu2").click(function () { showPar("#mtg"); });
+            $("#menu3").click(function () {
+                $(".par1").hide();
+                $("#hearth").show();
+                $("footer").show();
+                $("#scrollToTop").show();
+                $("html, body").animate({
+                    scrollTop: $("#hearth").position().top - 20
+                }, 1000);
+            });
+            $(".navbar_a").click(function () {
+                event.preventDefault();
+                $("html, body").animate({
+                    scrollTop: $(this.getAttribute('href')).position().top - 20
+                }, 1000);
+            });
+        });
+        $(document).ready(function () {
+            $("#scrollPos").click(function () {
+                alert($("#hearth").position().top);
+            });
+        });
+        $(document).ready(function () {
+            $("#scrollToTop").click(function () {
+                $("html, body").animate({
+                    scrollTop: 0
+                }, 1000, function () {
+                    $(".par1").hide();
+                    $("footer").hide();
+                });
+                $("#scrollToTop").hide();
+            });
+        });
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }
+        $('a[href*=\\#]').on('click', function (event) {
+            event.preventDefault();
+            $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 500);
+        });
+
+    </script>
+</head>
+<body id="top">
+    <div class="mainmenu">
+        <div class="navmenu" id="menu1">O mnie</div>
+        <div class="navmenu" id="menu2"><img class="center_img" src="assets/images/magic-the-gathering-card-back.png" /></div>
+        <div class="navmenu" id="menu3"><img src="assets/images/Hearthstone_Logo.png" /></div>
+        <a href="contact.html"><div class="navmenu" id="menu4">Kontakt</div></a>
+    </div>
+    <div id="aboutme" class="par1">
+        <h1>O mnie</h1>
+        <p>Cześć nazywam się Grzegorz Brzęczyszczykiewicz jestem graczem z Polski.  Urodziłem się w Wąchocku. <br> Grać zacząłem w wieku 2 lat. Od zawsze podobały mi się gry TCG (Trading Card Games) i ich pochodne. <br> W wieku 3 lat moj 30 letni kolega pokazał mi Magica i zakochałem się w nim (w grze nie w koledze). Od tamtej pory uczyłem się grać i wydawałem na nią fortunę aby stać się profesjonalnym graczem...</p>
+    </div>
+    <div id="mtg" class="par1">
+        <h1>Magic: The Gathering</h1>
+        <p>Magic: The Gathering (M:TG) – kolekcjonerska gra karciana (ang. Trading Card Game – TCG). Do gry w Magica potrzebne są co najmniej dwie osoby z własnymi taliami. Każdy gracz wciela się w rolę czarodzieja, który używając różnorodnych zagrań, przedmiotów i stworzeń stara się pokonać przeciwnika. W Magica grają osoby w różnym wieku, od 13 do nawet 50 lat.</p>
+        <p>
+            Pomysłodawcą gry był Richard Garfield – nauczyciel matematyki w jednej z amerykańskich szkół. To właśnie on w roku 1993 zjawił się w małej firmie Wizards of the Coast z propozycją wydania gry planszowej w klimacie fantasy. Koncepcja oraz szkic zasad rządzących zabawą spodobały się firmie Wizards of the Coast, jednak zbyt wysokie koszty produkcyjne zmusiły autora do stworzenia wersji karcianej gry. Dostrzeżono ogromny potencjał gry mającej nieskomplikowane przepisy, ale urozmaiconej i ciekawej dzięki dodatkowym zasadom umieszczonym na kartach. Wydrukowano 2 600 000 kart o 295 wzorach, które po raz pierwszy zaprezentowano 5 sierpnia 1993 na konwencie Origins. Odzew graczy przeszedł najśmielsze oczekiwania wydawców i przyniósł ogromny sukces kasowy.
+
+            Zachęcona sporymi zyskami z pierwszej edycji (zwanej później Alfa) firma Wizards of the Coast wypuściła na rynek kolejne: Beta, Unlimited, Revised (nazwaną 3rd Edition – "trzecią edycją"), a następnie edycje od 4. do 9. Edycja szósta znana jest jako Classic. Dla uczczenia dziesięciolecia gry, w roku 2003, przy wydaniu 8. edycji, zmieniono układ graficzny kart.
+
+            14 lipca 2007 roku ukazała się 10. edycja, przy której tworzeniu współudział mieli również gracze. Na oficjalnej stronie gry każdy mógł założyć swoje konto i raz w tygodniu głosować na karty, które zostały potem przedrukowane.
+
+            W 2009 roku zmieniono sposób wydawania kolejnych edycji. Aktualnie edycje są wydawane co roku i noszą nazwy Magic 2010, Magic 2011, Magic 2012, Magic 2013 i Magic 2014.
+        </p>
+    </div>
+    <div id="hearth" class="par1">
+        <span id="hearth_nav" onclick="openNav()">&#9776;</span>
+        <h1 id="h_title">Hearthstone: Heroes of Warcraft</h1>
+        <p>
+            Hearthstone: Heroes of Warcraft – kolekcjonerska gra karciana wyprodukowana i wydana przez Blizzard Entertainment, której premiera na komputery osobiste z systemem Windows i Macintosh odbyła się 11 marca 2014. Później wydano także wersję na urządzenia mobilne z systemami iOS i Android oraz dodano możliwość gry przy przy pomocy ekranu dotykowego na urządzeniach z systemem Windows 8. Gra oparta jest na modelu free-to-play z systemem mikropłatności, a głównym elementem rozgrywki są pojedynki online przeciwko innym graczom w serwisie Battle.net. Hearthstone zostało dobrze przyjęte przez krytyków, uzyskując wysokie średnie ocen w agregatorach. W wersji na komputery osobiste gra zdobyła 87,57% w serwisie GameRankings oraz 88/100 w portalu Metacritic. W listopadzie 2015 roku liczba założonych kont w grze przekroczyła 40 milionów. Gra doczekała się siedmiu rozszerzeń zatytułowanych Klątwa Naxxramas, Gobliny vs Gnomy, Czarna Góra, Wielki turniej, Liga Odkrywców, Przedwieczni Bogowie oraz Pewnej nocy w Karazhanie.
+        </p>
+        <h4 id="h_par_1">Paragraph 1</h4>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sollicitudin metus arcu, non fringilla arcu hendrerit dictum. In at ex sed justo ultricies aliquam at eu sapien. Proin volutpat quam nunc, in varius erat dapibus sit amet. Aenean suscipit interdum lobortis. Nulla sed nunc vel diam scelerisque molestie at a ligula. Donec ullamcorper odio id maximus suscipit. Nam et neque suscipit, sagittis urna vel, tristique lorem. Suspendisse eget lectus placerat, mattis ligula at, sodales ex. Sed libero nisi, sagittis et diam non, maximus consectetur mi. Nam id nisi in mauris congue venenatis in lobortis tellus. Vivamus egestas euismod elementum. Duis mauris magna, condimentum eu nulla vitae, elementum ornare sapien. Suspendisse vitae tincidunt ipsum. Suspendisse a arcu turpis. Proin vitae augue neque.
+
+            Integer nec tincidunt ante, a scelerisque dolor. Quisque pulvinar nisl in auctor faucibus. Ut ornare, orci ac feugiat placerat, sapien metus laoreet tellus, et consectetur libero ipsum id nunc. Aliquam erat volutpat. Suspendisse egestas magna felis, vitae feugiat metus gravida vel. Donec at feugiat justo. Phasellus bibendum dolor ac ullamcorper congue. Maecenas et consequat nunc. Sed id ipsum in dui fringilla dapibus vel non nibh. Nullam eu ultricies ex, a convallis lacus. Pellentesque eleifend cursus sagittis. Proin posuere ligula ac tellus auctor varius. Quisque commodo volutpat lorem aliquet aliquam.
+
+            Proin quis odio a metus elementum bibendum. Praesent fringilla, metus non feugiat sollicitudin, tortor justo molestie elit, id commodo diam dui non est. Suspendisse eleifend nibh ut nisi aliquet, et volutpat justo sollicitudin. Maecenas posuere leo sit amet enim gravida, at ultricies lacus imperdiet. Nam vel pharetra felis, non laoreet velit. Nulla imperdiet vestibulum ipsum sit amet maximus. Nam nec turpis augue. Nam tortor massa, lacinia in magna sed, molestie elementum metus. Vestibulum maximus ligula turpis, pharetra lacinia sem rhoncus at.
+
+            Morbi consequat felis massa. Curabitur elit nulla, euismod ut neque euismod, laoreet semper mi. Morbi at ligula purus. Nunc nec porttitor neque, vel varius urna. Pellentesque felis diam, mattis ullamcorper libero id, posuere luctus ligula. Quisque et dapibus eros. Vivamus convallis auctor tempor.
+
+            Curabitur suscipit, turpis eleifend consectetur volutpat, nibh justo pulvinar dolor, sed posuere odio est vitae lorem. In vulputate, risus sed commodo hendrerit, erat justo blandit nulla, ut dignissim ex leo vitae magna. Fusce quis elit in ligula facilisis blandit. Nunc vel lectus lacus. Nulla ligula risus, dignissim eu dignissim non, egestas eget sem. Donec non elit id turpis aliquam vestibulum at vitae ex. Etiam nec lacus quam. Nam finibus tempor elit, ut faucibus massa mollis eget. Cras maximus vel ipsum sed lobortis. Quisque suscipit ligula sed metus molestie, ac sagittis dui suscipit. Praesent sed bibendum turpis. Pellentesque lacinia mi congue maximus fringilla. Duis vel massa ac lorem facilisis faucibus id in leo. Cras risus odio, porta ut neque sed, mattis vestibulum leo.
+        </p>
+        <h4 id="h_par_2">Paragraph 2</h4>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sollicitudin metus arcu, non fringilla arcu hendrerit dictum. In at ex sed justo ultricies aliquam at eu sapien. Proin volutpat quam nunc, in varius erat dapibus sit amet. Aenean suscipit interdum lobortis. Nulla sed nunc vel diam scelerisque molestie at a ligula. Donec ullamcorper odio id maximus suscipit. Nam et neque suscipit, sagittis urna vel, tristique lorem. Suspendisse eget lectus placerat, mattis ligula at, sodales ex. Sed libero nisi, sagittis et diam non, maximus consectetur mi. Nam id nisi in mauris congue venenatis in lobortis tellus. Vivamus egestas euismod elementum. Duis mauris magna, condimentum eu nulla vitae, elementum ornare sapien. Suspendisse vitae tincidunt ipsum. Suspendisse a arcu turpis. Proin vitae augue neque.
+
+            Integer nec tincidunt ante, a scelerisque dolor. Quisque pulvinar nisl in auctor faucibus. Ut ornare, orci ac feugiat placerat, sapien metus laoreet tellus, et consectetur libero ipsum id nunc. Aliquam erat volutpat. Suspendisse egestas magna felis, vitae feugiat metus gravida vel. Donec at feugiat justo. Phasellus bibendum dolor ac ullamcorper congue. Maecenas et consequat nunc. Sed id ipsum in dui fringilla dapibus vel non nibh. Nullam eu ultricies ex, a convallis lacus. Pellentesque eleifend cursus sagittis. Proin posuere ligula ac tellus auctor varius. Quisque commodo volutpat lorem aliquet aliquam.
+
+            Proin quis odio a metus elementum bibendum. Praesent fringilla, metus non feugiat sollicitudin, tortor justo molestie elit, id commodo diam dui non est. Suspendisse eleifend nibh ut nisi aliquet, et volutpat justo sollicitudin. Maecenas posuere leo sit amet enim gravida, at ultricies lacus imperdiet. Nam vel pharetra felis, non laoreet velit. Nulla imperdiet vestibulum ipsum sit amet maximus. Nam nec turpis augue. Nam tortor massa, lacinia in magna sed, molestie elementum metus. Vestibulum maximus ligula turpis, pharetra lacinia sem rhoncus at.
+
+            Morbi consequat felis massa. Curabitur elit nulla, euismod ut neque euismod, laoreet semper mi. Morbi at ligula purus. Nunc nec porttitor neque, vel varius urna. Pellentesque felis diam, mattis ullamcorper libero id, posuere luctus ligula. Quisque et dapibus eros. Vivamus convallis auctor tempor.
+
+            Curabitur suscipit, turpis eleifend consectetur volutpat, nibh justo pulvinar dolor, sed posuere odio est vitae lorem. In vulputate, risus sed commodo hendrerit, erat justo blandit nulla, ut dignissim ex leo vitae magna. Fusce quis elit in ligula facilisis blandit. Nunc vel lectus lacus. Nulla ligula risus, dignissim eu dignissim non, egestas eget sem. Donec non elit id turpis aliquam vestibulum at vitae ex. Etiam nec lacus quam. Nam finibus tempor elit, ut faucibus massa mollis eget. Cras maximus vel ipsum sed lobortis. Quisque suscipit ligula sed metus molestie, ac sagittis dui suscipit. Praesent sed bibendum turpis. Pellentesque lacinia mi congue maximus fringilla. Duis vel massa ac lorem facilisis faucibus id in leo. Cras risus odio, porta ut neque sed, mattis vestibulum leo.
+        </p>
+        <h4 id="h_par_3">Paragraph 3</h4>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sollicitudin metus arcu, non fringilla arcu hendrerit dictum. In at ex sed justo ultricies aliquam at eu sapien. Proin volutpat quam nunc, in varius erat dapibus sit amet. Aenean suscipit interdum lobortis. Nulla sed nunc vel diam scelerisque molestie at a ligula. Donec ullamcorper odio id maximus suscipit. Nam et neque suscipit, sagittis urna vel, tristique lorem. Suspendisse eget lectus placerat, mattis ligula at, sodales ex. Sed libero nisi, sagittis et diam non, maximus consectetur mi. Nam id nisi in mauris congue venenatis in lobortis tellus. Vivamus egestas euismod elementum. Duis mauris magna, condimentum eu nulla vitae, elementum ornare sapien. Suspendisse vitae tincidunt ipsum. Suspendisse a arcu turpis. Proin vitae augue neque.
+
+            Integer nec tincidunt ante, a scelerisque dolor. Quisque pulvinar nisl in auctor faucibus. Ut ornare, orci ac feugiat placerat, sapien metus laoreet tellus, et consectetur libero ipsum id nunc. Aliquam erat volutpat. Suspendisse egestas magna felis, vitae feugiat metus gravida vel. Donec at feugiat justo. Phasellus bibendum dolor ac ullamcorper congue. Maecenas et consequat nunc. Sed id ipsum in dui fringilla dapibus vel non nibh. Nullam eu ultricies ex, a convallis lacus. Pellentesque eleifend cursus sagittis. Proin posuere ligula ac tellus auctor varius. Quisque commodo volutpat lorem aliquet aliquam.
+
+            Proin quis odio a metus elementum bibendum. Praesent fringilla, metus non feugiat sollicitudin, tortor justo molestie elit, id commodo diam dui non est. Suspendisse eleifend nibh ut nisi aliquet, et volutpat justo sollicitudin. Maecenas posuere leo sit amet enim gravida, at ultricies lacus imperdiet. Nam vel pharetra felis, non laoreet velit. Nulla imperdiet vestibulum ipsum sit amet maximus. Nam nec turpis augue. Nam tortor massa, lacinia in magna sed, molestie elementum metus. Vestibulum maximus ligula turpis, pharetra lacinia sem rhoncus at.
+
+            Morbi consequat felis massa. Curabitur elit nulla, euismod ut neque euismod, laoreet semper mi. Morbi at ligula purus. Nunc nec porttitor neque, vel varius urna. Pellentesque felis diam, mattis ullamcorper libero id, posuere luctus ligula. Quisque et dapibus eros. Vivamus convallis auctor tempor.
+
+            Curabitur suscipit, turpis eleifend consectetur volutpat, nibh justo pulvinar dolor, sed posuere odio est vitae lorem. In vulputate, risus sed commodo hendrerit, erat justo blandit nulla, ut dignissim ex leo vitae magna. Fusce quis elit in ligula facilisis blandit. Nunc vel lectus lacus. Nulla ligula risus, dignissim eu dignissim non, egestas eget sem. Donec non elit id turpis aliquam vestibulum at vitae ex. Etiam nec lacus quam. Nam finibus tempor elit, ut faucibus massa mollis eget. Cras maximus vel ipsum sed lobortis. Quisque suscipit ligula sed metus molestie, ac sagittis dui suscipit. Praesent sed bibendum turpis. Pellentesque lacinia mi congue maximus fringilla. Duis vel massa ac lorem facilisis faucibus id in leo. Cras risus odio, porta ut neque sed, mattis vestibulum leo.
+        </p>
+        <h4 id="h_par_4">Paragraph 4</h4>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sollicitudin metus arcu, non fringilla arcu hendrerit dictum. In at ex sed justo ultricies aliquam at eu sapien. Proin volutpat quam nunc, in varius erat dapibus sit amet. Aenean suscipit interdum lobortis. Nulla sed nunc vel diam scelerisque molestie at a ligula. Donec ullamcorper odio id maximus suscipit. Nam et neque suscipit, sagittis urna vel, tristique lorem. Suspendisse eget lectus placerat, mattis ligula at, sodales ex. Sed libero nisi, sagittis et diam non, maximus consectetur mi. Nam id nisi in mauris congue venenatis in lobortis tellus. Vivamus egestas euismod elementum. Duis mauris magna, condimentum eu nulla vitae, elementum ornare sapien. Suspendisse vitae tincidunt ipsum. Suspendisse a arcu turpis. Proin vitae augue neque.
+
+            Integer nec tincidunt ante, a scelerisque dolor. Quisque pulvinar nisl in auctor faucibus. Ut ornare, orci ac feugiat placerat, sapien metus laoreet tellus, et consectetur libero ipsum id nunc. Aliquam erat volutpat. Suspendisse egestas magna felis, vitae feugiat metus gravida vel. Donec at feugiat justo. Phasellus bibendum dolor ac ullamcorper congue. Maecenas et consequat nunc. Sed id ipsum in dui fringilla dapibus vel non nibh. Nullam eu ultricies ex, a convallis lacus. Pellentesque eleifend cursus sagittis. Proin posuere ligula ac tellus auctor varius. Quisque commodo volutpat lorem aliquet aliquam.
+
+            Proin quis odio a metus elementum bibendum. Praesent fringilla, metus non feugiat sollicitudin, tortor justo molestie elit, id commodo diam dui non est. Suspendisse eleifend nibh ut nisi aliquet, et volutpat justo sollicitudin. Maecenas posuere leo sit amet enim gravida, at ultricies lacus imperdiet. Nam vel pharetra felis, non laoreet velit. Nulla imperdiet vestibulum ipsum sit amet maximus. Nam nec turpis augue. Nam tortor massa, lacinia in magna sed, molestie elementum metus. Vestibulum maximus ligula turpis, pharetra lacinia sem rhoncus at.
+
+            Morbi consequat felis massa. Curabitur elit nulla, euismod ut neque euismod, laoreet semper mi. Morbi at ligula purus. Nunc nec porttitor neque, vel varius urna. Pellentesque felis diam, mattis ullamcorper libero id, posuere luctus ligula. Quisque et dapibus eros. Vivamus convallis auctor tempor.
+
+            Curabitur suscipit, turpis eleifend consectetur volutpat, nibh justo pulvinar dolor, sed posuere odio est vitae lorem. In vulputate, risus sed commodo hendrerit, erat justo blandit nulla, ut dignissim ex leo vitae magna. Fusce quis elit in ligula facilisis blandit. Nunc vel lectus lacus. Nulla ligula risus, dignissim eu dignissim non, egestas eget sem. Donec non elit id turpis aliquam vestibulum at vitae ex. Etiam nec lacus quam. Nam finibus tempor elit, ut faucibus massa mollis eget. Cras maximus vel ipsum sed lobortis. Quisque suscipit ligula sed metus molestie, ac sagittis dui suscipit. Praesent sed bibendum turpis. Pellentesque lacinia mi congue maximus fringilla. Duis vel massa ac lorem facilisis faucibus id in leo. Cras risus odio, porta ut neque sed, mattis vestibulum leo.
+        </p>
+        <h4 id="h_par_5">Paragraph 5</h4>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sollicitudin metus arcu, non fringilla arcu hendrerit dictum. In at ex sed justo ultricies aliquam at eu sapien. Proin volutpat quam nunc, in varius erat dapibus sit amet. Aenean suscipit interdum lobortis. Nulla sed nunc vel diam scelerisque molestie at a ligula. Donec ullamcorper odio id maximus suscipit. Nam et neque suscipit, sagittis urna vel, tristique lorem. Suspendisse eget lectus placerat, mattis ligula at, sodales ex. Sed libero nisi, sagittis et diam non, maximus consectetur mi. Nam id nisi in mauris congue venenatis in lobortis tellus. Vivamus egestas euismod elementum. Duis mauris magna, condimentum eu nulla vitae, elementum ornare sapien. Suspendisse vitae tincidunt ipsum. Suspendisse a arcu turpis. Proin vitae augue neque.
+
+            Integer nec tincidunt ante, a scelerisque dolor. Quisque pulvinar nisl in auctor faucibus. Ut ornare, orci ac feugiat placerat, sapien metus laoreet tellus, et consectetur libero ipsum id nunc. Aliquam erat volutpat. Suspendisse egestas magna felis, vitae feugiat metus gravida vel. Donec at feugiat justo. Phasellus bibendum dolor ac ullamcorper congue. Maecenas et consequat nunc. Sed id ipsum in dui fringilla dapibus vel non nibh. Nullam eu ultricies ex, a convallis lacus. Pellentesque eleifend cursus sagittis. Proin posuere ligula ac tellus auctor varius. Quisque commodo volutpat lorem aliquet aliquam.
+
+            Proin quis odio a metus elementum bibendum. Praesent fringilla, metus non feugiat sollicitudin, tortor justo molestie elit, id commodo diam dui non est. Suspendisse eleifend nibh ut nisi aliquet, et volutpat justo sollicitudin. Maecenas posuere leo sit amet enim gravida, at ultricies lacus imperdiet. Nam vel pharetra felis, non laoreet velit. Nulla imperdiet vestibulum ipsum sit amet maximus. Nam nec turpis augue. Nam tortor massa, lacinia in magna sed, molestie elementum metus. Vestibulum maximus ligula turpis, pharetra lacinia sem rhoncus at.
+
+            Morbi consequat felis massa. Curabitur elit nulla, euismod ut neque euismod, laoreet semper mi. Morbi at ligula purus. Nunc nec porttitor neque, vel varius urna. Pellentesque felis diam, mattis ullamcorper libero id, posuere luctus ligula. Quisque et dapibus eros. Vivamus convallis auctor tempor.
+
+            Curabitur suscipit, turpis eleifend consectetur volutpat, nibh justo pulvinar dolor, sed posuere odio est vitae lorem. In vulputate, risus sed commodo hendrerit, erat justo blandit nulla, ut dignissim ex leo vitae magna. Fusce quis elit in ligula facilisis blandit. Nunc vel lectus lacus. Nulla ligula risus, dignissim eu dignissim non, egestas eget sem. Donec non elit id turpis aliquam vestibulum at vitae ex. Etiam nec lacus quam. Nam finibus tempor elit, ut faucibus massa mollis eget. Cras maximus vel ipsum sed lobortis. Quisque suscipit ligula sed metus molestie, ac sagittis dui suscipit. Praesent sed bibendum turpis. Pellentesque lacinia mi congue maximus fringilla. Duis vel massa ac lorem facilisis faucibus id in leo. Cras risus odio, porta ut neque sed, mattis vestibulum leo.
+        </p>
+    </div>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a class="navbar_a" href="#h_title">Beginning</a>
+        <a class="navbar_a" href="#h_par_1">Paragraph 1</a>
+        <a class="navbar_a" href="#h_par_2">Paragraph 2</a>
+        <a class="navbar_a" href="#h_par_3">Paragraph 3</a>
+        <a class="navbar_a" href="#h_par_4">Paragraph 4</a>
+        <a class="navbar_a" href="#h_par_5">Paragraph 5</a>
+    </div>
+    <div id="scrollToTop"><img src="assets/images/up-arrow.png" id="up_arrow"/></div>
+    <footer>
+        <p>&copy;Someone's copyrights.</p>
+    </footer>
+</body>
+</html>

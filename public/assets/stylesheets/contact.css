@@ -1,0 +1,39 @@
+.aaa {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    font-size: 40px;
+    font-family: 'MyFont', Impact, Charcoal, sans-serif;
+    text-decoration: none;
+    color: black;
+}
+
+#kontakt {
+  font-size: 30px;
+  font-family: 'MyFont', Impact, Charcoal, sans-serif;
+  margin: 15px;
+  text-align: center;
+}
+
+#joinChat {
+  text-decoration: none;
+  color: black;
+  margin-top: 60px;
+  margin-left: 15px;
+  border: 10px;
+  border-color: black;
+  border-width: 3px;
+  border-style: solid;
+  padding: 10px;
+  display: inline-block;
+  font-size: 50px;
+  font-family: 'MyFont', Impact, Charcoal, sans-serif;
+  vertical-align: middle;
+
+}
+
+#srodek {
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%,0);
+}
